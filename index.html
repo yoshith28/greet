@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secret Button Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="containeri">
+        <h1 id="animatedText"></h1>
+        <button class="btn btn-custom" onclick="redirectToEarphonesPage()">
+            <!-- <i class="fas "></i> -->
+             Click Me
+        </button>
+    </div>
+
+    <script>
+        // Typing effect for the text
+        const text = "Click on this button when you are alone";
+        let index = 0;
+
+        function typeWriter() {
+            if (index < text.length) {
+                document.getElementById("animatedText").innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeWriter, 100); // Controls typing speed
+            }
+        }
+
+        // Redirect function
+        function redirectToEarphonesPage() {
+            window.location.href = "earphones.html";
+        }
+
+        // Start typing effect on window load
+        window.onload = typeWriter;
+        
+    </script>
+</body>
+</html>
